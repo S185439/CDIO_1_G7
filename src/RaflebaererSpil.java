@@ -6,11 +6,10 @@ public class RaflebaererSpil {
     }
     public static void main(String[] args) {
         int count = 0;
-        for (int i = 0; i < 100000; i++) {
-            int resultat1 = slaaTerning()[0];
-            int resultat2 = slaaTerning()[1];
-            System.out.println(resultat1 + ", " + resultat2);
-            if (resultat2 == 6 && resultat1 == 6) {
+        for (int i = 0; i < 1000000; i++) {
+            int[] resultat = slaaTerning();
+            System.out.println(resultat[0] + ", " + resultat[1]);
+            if (resultat[0] == 6 && resultat[1] == 6) {
                 count++;
             }
         }
