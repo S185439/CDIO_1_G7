@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/CDIO_1_G7.iml" filepath="$PROJECT_DIR$/CDIO_1_G7.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Spil/Spil.iml" filepath="$PROJECT_DIR$/Spil/Spil.iml" />
     </modules>
   </component>
 </project>
