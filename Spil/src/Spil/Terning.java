@@ -1,3 +1,4 @@
+package Spil;
 public class Terning {
     private final int antalSider = 6;
     private int terningvaerdi;
