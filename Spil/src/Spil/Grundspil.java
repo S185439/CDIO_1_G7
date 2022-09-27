@@ -36,6 +36,11 @@ public class Grundspil {
                     spillerEtPoint = spillerEtPoint + (terningSaet[0].terningvaerdiRetur() + terningSaet[1].terningvaerdiRetur());
                     System.out.println("Du slog: " + terningSaet[0].terningvaerdiRetur() + " og " + terningSaet[1].terningvaerdiRetur());
                     System.out.println("Summen af de to terninger er: " + (terningSaet[0].terningvaerdiRetur()+terningSaet[1].terningvaerdiRetur()));
+                    // Feature 1, Hvis spilleren slår 2 1'ere sættes spillerens point til 0.
+                    if (terningSaet[0].terningvaerdiRetur() == 1 && terningSaet[1].terningvaerdiRetur() == 1) {
+                        spillerEtPoint = 0;
+                        System.out.println("Da du slog 2 1'ere, mister du alle dine point");
+                    }
                     System.out.println("Du har nu: " + spillerEtPoint + " point");
                     System.out.println();
                     //ændrer hvisTur til 2 og derfor giver spiller 2 sin tur
@@ -53,6 +58,10 @@ public class Grundspil {
                     spillerToPoint = spillerToPoint + (terningSaet[0].terningvaerdiRetur() + terningSaet[1].terningvaerdiRetur());
                     System.out.println("Du slog: " + terningSaet[0].terningvaerdiRetur() + " og " + terningSaet[1].terningvaerdiRetur());
                     System.out.println("Summen af de to terninger er: " + (terningSaet[0].terningvaerdiRetur()+terningSaet[1].terningvaerdiRetur()));
+                    if (terningSaet[0].terningvaerdiRetur() == 1 && terningSaet[1].terningvaerdiRetur() == 1) {
+                        spillerToPoint = 0;
+                        System.out.println("Da du slog 2 1'ere mister du alle dine point");
+                    }
                     System.out.println("Du har nu: " + spillerToPoint + " point");
                     System.out.println();
                     hvisTur = 1;

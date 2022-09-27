@@ -24,17 +24,17 @@ public class TestTerning {
                 countEns++;
             }
             switch (resultat1 + resultat2) {
-                case 2 -> countTo++;
-                case 3 -> countTre++;
-                case 4 -> countFire++;
-                case 5 -> countFem++;
-                case 6 -> countSeks++;
-                case 7 -> countSyv++;
-                case 8 -> countOtte++;
-                case 9 -> countNi++;
-                case 10 -> countTi++;
-                case 11 -> countElleve++;
-                case 12 -> countTolv++;
+                case 2: countTo++;
+                case 3: countTre++;
+                case 4: countFire++;
+                case 5: countFem++;
+                case 6: countSeks++;
+                case 7: countSyv++;
+                case 8: countOtte++;
+                case 9: countNi++;
+                case 10: countTi++;
+                case 11: countElleve++;
+                case 12: countTolv++;
             }
         }
         System.out.println("Ens: " + countEns);
