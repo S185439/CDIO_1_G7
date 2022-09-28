@@ -7,8 +7,18 @@ public class Grundspil {
         Scanner scan = new Scanner(System.in);
         Terning terning1 = new Terning();
         Terning terning2 = new Terning();
+
         // ud fra de 2 terninge objekter bliver det lavet et array med terning 1 på plads 0 og terning 2 på plads 1
         Terning[] terningSaet = {terning1, terning2};
+
+        //Funkion 1.3 HVAD VED DE OM LAKS
+
+        boolean sidsteslagpar6spiller1 = false;
+        boolean sidsteslagpar6spiller2 = false;
+
+        
+
+
         int spillerEtPoint = 0;
         int spillerToPoint = 0;
         // en variable som skifter imellem 1 og 2 og bestemmer hvem som slå med terningen
@@ -32,14 +42,35 @@ public class Grundspil {
                     //bruger slaaterning method fra terningobject
                     terningSaet[0].slaaTerning();
                     terningSaet[1].slaaTerning();
+
+                    // funk 1.3
+
+                    if (terningSaet[0].terningvaerdiRetur()==6 && terningSaet[1].terningvaerdiRetur()==6 && sidsteslagpar6spiller1) {
+                       spillerEtPoint=40;
+                    }
+
+
+
                     //plusser summen til spillerEtPoint
                     spillerEtPoint = spillerEtPoint + (terningSaet[0].terningvaerdiRetur() + terningSaet[1].terningvaerdiRetur());
                     System.out.println("Du slog: " + terningSaet[0].terningvaerdiRetur() + " og " + terningSaet[1].terningvaerdiRetur());
-                    System.out.println("Summen af de to terninger er: " + (terningSaet[0].terningvaerdiRetur()+terningSaet[1].terningvaerdiRetur()));
+                    System.out.println("Summen af de to terninger er: " + (terningSaet[0].terningvaerdiRetur() + terningSaet[1].terningvaerdiRetur()));
                     System.out.println("Du har nu: " + spillerEtPoint + " point");
                     System.out.println();
                     //ændrer hvisTur til 2 og derfor giver spiller 2 sin tur
                     hvisTur = 2;
+
+                    //counter til funk 1.3
+
+                    if (terningSaet[0].terningvaerdiRetur()==6 && terningSaet[1].terningvaerdiRetur()==6) {
+                        sidsteslagpar6spiller1 = true;
+                    }
+                    else {
+                        sidsteslagpar6spiller1 = false;
+
+                    }
+
+
                 }
             } else {
                 //det samme som ovenfor bare for spiller 2
@@ -52,10 +83,20 @@ public class Grundspil {
                     terningSaet[1].slaaTerning();
                     spillerToPoint = spillerToPoint + (terningSaet[0].terningvaerdiRetur() + terningSaet[1].terningvaerdiRetur());
                     System.out.println("Du slog: " + terningSaet[0].terningvaerdiRetur() + " og " + terningSaet[1].terningvaerdiRetur());
-                    System.out.println("Summen af de to terninger er: " + (terningSaet[0].terningvaerdiRetur()+terningSaet[1].terningvaerdiRetur()));
+                    System.out.println("Summen af de to terninger er: " + (terningSaet[0].terningvaerdiRetur() + terningSaet[1].terningvaerdiRetur()));
                     System.out.println("Du har nu: " + spillerToPoint + " point");
                     System.out.println();
                     hvisTur = 1;
+
+
+                    if (terningSaet[0].terningvaerdiRetur()==6 && terningSaet[1].terningvaerdiRetur()==6) {
+                        sidsteslagpar6spiller2 = true;
+                    }
+                    else {
+                        sidsteslagpar6spiller2 = false;
+
+                    }
+
                 }
             }
         }
@@ -68,5 +109,28 @@ public class Grundspil {
         } else {
             System.out.println("Spillet blev stoppet inden nogen af jer nåede 40 point, så ingen vandt");
         }
+
+        //Begynder på funktion 1.3 hvor hvis spilleren slår 2 par 6 i streg så vinder de automatisk.
+
+        //laver en counter
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     }
+
 }
+
+
+
+
