@@ -35,8 +35,14 @@ public class Grundspil {
         while (!vinderErFundet && vent.equals("y")) {
             if (hvisTur == 1) {
                 System.out.println("Spiller 1, din tur til at slå");
-                System.out.println("Du har " + spillerEtPoint + " point indtil videre og mangler " + (40 - spillerEtPoint) + " for at vinde");
+                if (spillerEtFinalist) {
+                    System.out.println("Du har " + spillerEtPoint + " point");
+                }
+                if (spillerEtFinalist) {
+                    System.out.println("Du skal slå to ens for at vinde");
+                }
                 System.out.println("Skriv y og tryk enter for at slå, skrives andet stopper spillet");
+
                 //venter på at spiller 1 skriver y og derfor slår med terningerne
                 vent = scan.nextLine();
                 // hvis der bliver skrevet y slåes med terningerne og summen af de 2 terninger plusses til spiller 1s point
@@ -96,7 +102,12 @@ public class Grundspil {
             } else {
                 //det samme som ovenfor bare for spiller 2
                 System.out.println("Spiller 2, din tur til at slå");
-                System.out.println("Du har " + spillerToPoint + " point indtil videre og mangler " + (40 - spillerToPoint) + " for at vinde");
+                if (!spillerToFinalist) {
+                    System.out.println("Du har " + spillerToPoint + " point");
+                }
+                if (spillerToFinalist) {
+                    System.out.println("Du skal slå to ens for at vinde");
+                }
                 System.out.println("Skriv y og tryk enter for at slå, skrives andet stopper spillet");
                 vent = scan.nextLine();
                 if (vent.equals("y")) {
