@@ -59,6 +59,23 @@ public class Grundspil {
                     //ændrer hvisTur til 2 og derfor giver spiller 2 sin tur
                     hvisTur = 2;
 
+                    // Feature 1, Hvis spilleren slår 2 1'ere sættes spillerens point til 0.
+                    if (terningSaet[0].terningvaerdiRetur() == 1 && terningSaet[1].terningvaerdiRetur() == 1) {
+                        spillerEtPoint = 0;
+                        System.out.println("Du slog 2 1'ere, mister du alle dine point");
+                    }
+                    //Feature 2, Spilleren får en ekstra tur, hvis de slår to ens
+                    if (terningSaet[0].terningvaerdiRetur() == terningSaet[1].terningvaerdiRetur()){
+                        System.out.println("Du slog 2 ens, så du får en ekstra tur!");
+                        System.out.println();
+                        //bruger hvisTur til at give samme spiller en ekstra tur
+                        hvisTur = 1;
+                    } else {
+                        System.out.println("Du har nu: " + spillerEtPoint + " point");
+                        System.out.println();
+                        //ændrer hvisTur til 2 og derfor giver spiller 2 sin tur
+                        hvisTur = 2;
+                    }
                     //counter til funk 1.3
 
                     if (terningSaet[0].terningvaerdiRetur() == 6 && terningSaet[1].terningvaerdiRetur() == 6) {
@@ -86,6 +103,23 @@ public class Grundspil {
                     System.out.println();
                     hvisTur = 1;
 
+                    // Feature 1, Hvis spilleren slår 2 1'ere sættes spillerens point til 0.
+                    if (terningSaet[0].terningvaerdiRetur() == 1 && terningSaet[1].terningvaerdiRetur() == 1) {
+                        spillerEtPoint = 0;
+                        System.out.println("Du slog 2 1'ere, mister du alle dine point");
+                    }
+                    //Feature 2, Spilleren får en ekstra tur, hvis de slår to ens
+                    if (terningSaet[0].terningvaerdiRetur() == terningSaet[1].terningvaerdiRetur()){
+                        System.out.println("Du slog 2 ens, så du får en ekstra tur!");
+                        System.out.println();
+                        //bruger hvisTur til at give samme spiller en ekstra tur
+                        hvisTur = 1;
+                    } else {
+                        System.out.println("Du har nu: " + spillerEtPoint + " point");
+                        System.out.println();
+                        //ændrer hvisTur til 2 og derfor giver spiller 2 sin tur
+                        hvisTur = 2;
+                    }
 
                     if (terningSaet[0].terningvaerdiRetur() == 6 && terningSaet[1].terningvaerdiRetur() == 6) {
                         sidsteslagpar6spiller2 = true;
