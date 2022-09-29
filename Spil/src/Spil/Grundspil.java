@@ -11,7 +11,7 @@ public class Grundspil {
         // ud fra de 2 terninge objekter bliver det lavet et array med terning 1 på plads 0 og terning 2 på plads 1
         Terning[] terningSaet = {terning1, terning2};
 
-        //Funkion 1.3 HVAD VED DE OM LAKS
+        //Funkion 1.3
 
         boolean sidsteslagpar6spiller1 = false;
         boolean sidsteslagpar6spiller2 = false;
