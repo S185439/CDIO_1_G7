@@ -35,8 +35,8 @@ public class Grundspil {
         while (!vinderErFundet && vent.equals("y")) {
             if (hvisTur == 1) {
                 System.out.println("Spiller 1, din tur til at slå");
-                if (spillerEtFinalist) {
-                    System.out.println("Du har " + spillerEtPoint + " point");
+                if (!spillerEtFinalist) {
+                    System.out.println("Du har " + spillerEtPoint + " point indtil videre og mangler " + (40 - spillerEtPoint) + " for at vinde");
                 }
                 if (spillerEtFinalist) {
                     System.out.println("Du skal slå to ens for at vinde");
@@ -96,6 +96,7 @@ public class Grundspil {
                         if (spillerEtPoint >= 40) {
                             spillerEtFinalist = true;
                             System.out.println("Spiller 1 er nået 40 point, du skal slå 2 ens for at vinde");
+                            System.out.println();
                         }
                     }
                 }
@@ -103,7 +104,7 @@ public class Grundspil {
                 //det samme som ovenfor bare for spiller 2
                 System.out.println("Spiller 2, din tur til at slå");
                 if (!spillerToFinalist) {
-                    System.out.println("Du har " + spillerToPoint + " point");
+                    System.out.println("Du har " + spillerToPoint + " point indtil videre og mangler " + (40 - spillerToPoint) + " for at vinde");
                 }
                 if (spillerToFinalist) {
                     System.out.println("Du skal slå to ens for at vinde");
