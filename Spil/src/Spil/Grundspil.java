@@ -44,6 +44,7 @@ public class Grundspil {
                     //bruger slaaterning method fra terningobject
                     terningSaet[0].slaaTerning();
                     terningSaet[1].slaaTerning();
+                    System.out.println("Du slog: " + terningSaet[0].terningvaerdiRetur() + " og " + terningSaet[1].terningvaerdiRetur());
 
                     if (spillerEtFinalist) {
                         if (terningSaet[0].terningvaerdiRetur() == 1 && terningSaet[1].terningvaerdiRetur() == 1) {
@@ -61,12 +62,10 @@ public class Grundspil {
                         }
                         //plusser summen til spillerEtPoint
                         spillerEtPoint = spillerEtPoint + (terningSaet[0].terningvaerdiRetur() + terningSaet[1].terningvaerdiRetur());
-                        System.out.println("Du slog: " + terningSaet[0].terningvaerdiRetur() + " og " + terningSaet[1].terningvaerdiRetur());
                         System.out.println("Summen af de to terninger er: " + (terningSaet[0].terningvaerdiRetur() + terningSaet[1].terningvaerdiRetur()));
                         System.out.println("Du har nu: " + spillerEtPoint + " point");
                         System.out.println();
                         //ændrer hvisTur til 2 og derfor giver spiller 2 sin tur
-                        hvisTur = 2;
 
                         // Feature 1, Hvis spilleren slår 2 1'ere sættes spillerens point til 0.
                         if (terningSaet[0].terningvaerdiRetur() == 1 && terningSaet[1].terningvaerdiRetur() == 1) {
@@ -80,8 +79,6 @@ public class Grundspil {
                             //bruger hvisTur til at give samme spiller en ekstra tur
                             hvisTur = 1;
                         } else {
-                            System.out.println("Du har nu: " + spillerEtPoint + " point");
-                            System.out.println();
                             //ændrer hvisTur til 2 og derfor giver spiller 2 sin tur
                             hvisTur = 2;
                         }
@@ -107,11 +104,12 @@ public class Grundspil {
                 if (vent.equals("y")) {
                     terningSaet[0].slaaTerning();
                     terningSaet[1].slaaTerning();
-
+                    System.out.println("Du slog: " + terningSaet[0].terningvaerdiRetur() + " og " + terningSaet[1].terningvaerdiRetur());
                     if (spillerToFinalist) {
                         if (terningSaet[0].terningvaerdiRetur() == 1 && terningSaet[1].terningvaerdiRetur() == 1) {
                             spillerEtPoint = 0;
                             System.out.println("Du slog 2 1'ere, mister du alle dine point");
+                            System.out.println();
                         } else if (terningSaet[0].terningvaerdiRetur() == terningSaet[1].terningvaerdiRetur()) {
                             vinderErFundet = true;
                         } else {
@@ -121,8 +119,7 @@ public class Grundspil {
                         if (terningSaet[0].terningvaerdiRetur() == 6 && terningSaet[1].terningvaerdiRetur() == 6 && sidsteslagpar6spiller2) {
                             vinderErFundet = true;
                         }
-                        spillerToPoint = spillerToPoint + (terningSaet[0].terningvaerdiRetur() + terningSaet[1].terningvaerdiRetur());
-                        System.out.println("Du slog: " + terningSaet[0].terningvaerdiRetur() + " og " + terningSaet[1].terningvaerdiRetur());
+                        spillerToPoint = spillerToPoint + (terningSaet[0].terningvaerdiRetur() + terningSaet[1].terningvaerdiRetur());;
                         System.out.println("Summen af de to terninger er: " + (terningSaet[0].terningvaerdiRetur() + terningSaet[1].terningvaerdiRetur()));
                         System.out.println("Du har nu: " + spillerToPoint + " point");
                         System.out.println();
@@ -135,8 +132,6 @@ public class Grundspil {
                             System.out.println("Du slog 2 ens, så du får en ekstra tur!");
                             System.out.println();
                         } else {
-                            System.out.println("Du har nu: " + spillerEtPoint + " point");
-                            System.out.println();
                             hvisTur = 1;
                         }
 
@@ -148,70 +143,25 @@ public class Grundspil {
                         if (spillerToPoint >= 40) {
                             spillerToFinalist = true;
                             System.out.println("Spiller 2 er nået 40 point, du skal slå 2 ens for at vinde");
+                            System.out.println();
                         }
                     }
                 }
             }
 
         }
-        while((spillerEtPoint >= 40 || spillerToPoint >= 40) && vindererfundet == false){
-            // hvis en spiller har 40 point skal spilleren slå 2 ens for at vinde spillet
-            if ( hvisTur == 1 && vindererfundet == false) {
-                System.out.println("Spiller 1 er nået 40 point, du skal slå 2 ens for at vinde");
-                System.out.println("Skriv y og tryk enter for at slå, skrives andet stopper spillet");
-                vent = scan.nextLine();
-                if (vent.equals("y")) {
-                    terningSaet[0].slaaTerning();
-                    terningSaet[1].slaaTerning();
-                    System.out.println("Du slog: " + terningSaet[0].terningvaerdiRetur() + " og " + terningSaet[1].terningvaerdiRetur());
-                    System.out.println("Summen af de to terninger er: " + (terningSaet[0].terningvaerdiRetur() + terningSaet[1].terningvaerdiRetur()));
-                    System.out.println();
-                    hvisTur = 2;
-                    if (terningSaet[0].terningvaerdiRetur() == terningSaet[1].terningvaerdiRetur()) {
-                        System.out.println("Spiller 1 har vundet");
-                        vindererfundet = true;
-                        vent = "n";
-                    }
-                }
-            }
-
-            if (hvisTur == 2 && vindererfundet == false) {
-                System.out.println("Spiller 2 er nået 40 point, du skal slå 2 ens for at vinde");
-                System.out.println("Skriv y og tryk enter for at slå, skrives andet stopper spillet");
-                vent = scan.nextLine();
-                if (vent.equals("y")) {
-                    terningSaet[0].slaaTerning();
-                    terningSaet[1].slaaTerning();
-                    System.out.println("Du slog: " + terningSaet[0].terningvaerdiRetur() + " og " + terningSaet[1].terningvaerdiRetur());
-                    System.out.println("Summen af de to terninger er: " + (terningSaet[0].terningvaerdiRetur() + terningSaet[1].terningvaerdiRetur()));
-                    System.out.println();
-                    hvisTur = 1;
-                    if (terningSaet[0].terningvaerdiRetur() == terningSaet[1].terningvaerdiRetur()) {
-                        System.out.println("Spiller 2 har vundet");
-                        vindererfundet = true;
-                        vent = "n";
-                    }
-                }
-            }
+        //tjekker hvem der har nået 40 point og siger tillykke til den pågældene spiller, hvis ingen nåede 40 point
+        // men spillet stadig stoppede er det fordi spillet blev stoppet af en af spillerne
+        if (vent.equals("y") && hvisTur == 1) {
+            System.out.println("Tillykke spiller 1, du var den første der nåede 40 point, hvilket betyder at du vandt spillet");
+        } else if (vent.equals("y")) {
+            System.out.println("Tillykke spiller 2, du var den første der nåede 40 point, hvilket betyder at du vandt spillet");
+        } else {
+            System.out.println("Spillet blev stoppet inden nogen af jer nåede 40 point, så ingen vandt");
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     }
-
 }
+
 
 
 
