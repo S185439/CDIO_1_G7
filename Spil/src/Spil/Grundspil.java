@@ -76,8 +76,6 @@ public class Grundspil {
                         if (terningSaet[0].terningvaerdiRetur() == terningSaet[1].terningvaerdiRetur()) {
                             System.out.println("Du slog 2 ens, så du får en ekstra tur!");
                             System.out.println();
-                            //bruger hvisTur til at give samme spiller en ekstra tur
-                            hvisTur = 1;
                         } else {
                             //ændrer hvisTur til 2 og derfor giver spiller 2 sin tur
                             hvisTur = 2;
